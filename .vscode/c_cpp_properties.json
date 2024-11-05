@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\mingw_dev_lib\\SDL\\include\\SDL2",
+                "C:\\mingw_dev_lib\\SDL\\lib",
+                "C:\\mingw_dev_lib\\SDL_image\\include\\SDL2",
+                "C:\\mingw_dev_lib\\SDL_image\\lib"
+            ],
+            "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
