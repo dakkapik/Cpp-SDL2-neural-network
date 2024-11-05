@@ -1,8 +1,11 @@
+//THIS ARE GUARDS FIND OUT HOW THEY WORK, THEY HELP ONLY COMPILING THE REQUIRED CODE
+
 #ifndef GAME_H
 #define GAME_H
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include "Layer.h"
 
 class Game {
     public:
@@ -15,13 +18,15 @@ class Game {
         void render();
         void clean();
 
-        bool running() {return isRunning; }
+
+        bool running() { return isRunning; }
     
     private:
         bool isRunning;
         float cnt;
         SDL_Window *window;
         SDL_Renderer *renderer;
+        // Layer layer;
         
 };
 

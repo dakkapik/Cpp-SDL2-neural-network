@@ -2,7 +2,8 @@
 #include <string>
 #include <cmath>
 
-#include "game.h"
+#include "Game.h"
+// #include "Layer.h"
 
 #ifndef GAME
 #define GAME
@@ -47,6 +48,7 @@ void Game::init(const char *title, int xpos, int ypos, int height, int width, bo
     SDL_Surface* custode = IMG_Load("assets/custode.png");
     SDL_Surface *iconSurface = IMG_Load("assests/custode.ico");
 
+    // layer->SetPosition(10,10);
 
     SDL_SetWindowIcon(window, iconSurface);
 
@@ -76,9 +78,6 @@ void Game::update(){
     destR.h = 64;
     destR.w = 64;
     destR.x = cnt;
-    
-
-    printf("counter: %f\n", cnt);
 }
 
 void Game::render(){
@@ -92,7 +91,7 @@ void Game::render(){
 
     SDL_RenderDrawLine(renderer, 10,10,100, cnt);
 
-    SDL_RenderDrawRect(renderer, &testR);
+    // layer->render(renderer);
 
     SDL_RenderPresent(renderer);
 }
