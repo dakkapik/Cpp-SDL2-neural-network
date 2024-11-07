@@ -10,7 +10,7 @@ g++ main.cpp Classes\Game.h Classes\Game.cpp Classes\Layer.h Classes\Layer.cpp i
 
 
 --compiling for dev and play--
-g++ main.cpp Classes\Game.h Classes\Game.cpp Classes\Layer.h Classes\Layer.cpp icon.o -IC:\mingw_dev_lib\SDL\include\SDL2 -LC:\mingw_dev_lib\SDL\lib -IC:\mingw_dev_lib\SDL_image\include\SDL2 -LC:\mingw_dev_lib\SDL_image\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o DakkaGameEng && .\DakkaGameEng
+g++ main.cpp Classes\Point.h Classes\Point.cpp Classes\Game.h Classes\Game.cpp Classes\Layer.h Classes\Layer.cpp icon.o -IC:\mingw_dev_lib\SDL\include\SDL2 -LC:\mingw_dev_lib\SDL\lib -IC:\mingw_dev_lib\SDL_image\include\SDL2 -LC:\mingw_dev_lib\SDL_image\lib -w -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o DakkaGameEng && .\DakkaGameEng
 
 
 --compile no layer lib--

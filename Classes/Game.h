@@ -7,6 +7,7 @@
 #include <SDL_image.h>
 #include "Layer.h"
 
+
 class Game {
     public:
         Game();
@@ -16,6 +17,8 @@ class Game {
         void handleEvents();
         void update();
         void render();
+        void renderPoint(int x, int y, int label);
+        void clearScreen();
         void clean();
 
 
@@ -26,7 +29,7 @@ class Game {
         float cnt;
         SDL_Window *window;
         SDL_Renderer *renderer;
-        // Layer layer;
+        Layer layer;
         
 };
 

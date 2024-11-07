@@ -3,13 +3,12 @@
 #include <cmath>
 
 #include "Game.h"
-// #include "Layer.h"
 
 #ifndef GAME
 #define GAME
 
 SDL_Texture* custodesTex;
-SDL_Rect srcR, destR, testR;
+SDL_Rect testR = {10,10,4,4};
 
 
 Game::Game(){
@@ -68,32 +67,41 @@ void Game::handleEvents(){
             break;
         default:
             break;
-
     }
-    
 }
 
 void Game::update(){
-    cnt += 0.1;
-    destR.h = 64;
-    destR.w = 64;
-    destR.x = cnt;
+    cnt += 0.01;
+    testR.x = cnt;
 }
 
 void Game::render(){
-    SDL_SetRenderDrawColor(renderer, 255,255,255,255);
-    SDL_RenderClear(renderer);
     //render stuff like in draw?
+    // SDL_RenderCopy(renderer, custodesTex, NULL, &destR);
+    // SDL_SetRenderDrawColor(renderer, 0,0,0,255);
     
-    SDL_RenderCopy(renderer, custodesTex, NULL, &destR);
-    
-    SDL_SetRenderDrawColor(renderer, 0,0,0,255);
+    // SDL_RenderFillRect(renderer, &testR);
+    // SDL_SetRenderDrawColor(renderer, 255,255,255,255);
 
-    SDL_RenderDrawLine(renderer, 10,10,100, cnt);
-
-    // layer->render(renderer);
-
+    //THIS IS IMPORTANT FOR THE END
     SDL_RenderPresent(renderer);
+}
+
+void Game::renderPoint(int x, int y, int label) {
+
+    SDL_Rect center = {x-2, y-2, 4,4};
+    if(label == 1) {
+        SDL_SetRenderDrawColor( renderer, 0xFF, 0x00, 0x00, 0xFF );
+    } else {
+        SDL_SetRenderDrawColor( renderer, 0,0,0, 0xFF );
+    }
+    	
+    SDL_RenderFillRect(renderer, &center);
+}
+
+void Game::clearScreen() {
+    SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF );
+	SDL_RenderClear( renderer );
 }
 
 void Game::clean(){
